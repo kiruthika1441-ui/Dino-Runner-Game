@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to top, #87ceeb, #e0f7fa);
+  font-family: Arial, sans-serif;
+}
+
+.rules {
+  margin: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.rules h2 {
+  margin: 0 0 10px 0;
+}
+
+.rules ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.game {
+  width: 800px;
+  height: 200px;
+  background: linear-gradient(to top, #c6f6c6, #f0fff4);
+  border: 2px solid #333;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+#dino {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(to bottom, #228b22, #006400);
+  border-radius: 8px;
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.obstacle {
+  width: 40px;
+  height: 50px;
+  background: linear-gradient(to bottom, #ff6347, #8b0000);
+  border-radius: 5px;
+  position: absolute;
+  bottom: 20px;
+  right: -40px;
+  animation: move 2s linear infinite;
+  animation-play-state: paused; /* start paused */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: #654321;
+}
+
+@keyframes move {
+  0% { right: -40px; }
+  100% { right: 800px; }
+}
+
+.jump {
+  animation: jump 0.5s ease-out;
+}
+
+@keyframes jump {
+  0% { bottom: 20px; }
+  50% { bottom: 100px; }
+  100% { bottom: 20px; }
+}
+
+#score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+#message {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+  background: rgba(255,255,255,0.9);
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: none;
+}
+
+.controls {
+  margin-top: 15px;
+}
+
+.controls button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.controls button:hover {
+  background: #555;
+}
